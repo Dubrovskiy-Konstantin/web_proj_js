@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>My Project</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="import" href="source/homepage.html">
+    </head>
+
+    <body>
+        <div class="wrapper">
+            <header>
+                <div class="container-row">
+                    <nav id="menu">
+                        <ul>
+                            <li><a href="#">Главная</a></li>
+                            <li><a href="#">О нас</a></li>
+                            <li><a href="#">Контакты</a></li>
+                        </ul>               
+                    </nav>
+
+                    <nav id="profile">
+                        <ul>
+                            <li>
+                                <img src="img/avatar.png" width="30" alt="User"/>
+                            </li>
+                            <li><a href="#">Профиль</a></li>
+                        </ul>               
+                    </nav>                    
+                </div>          
+            </header>
+
+            <main>
+                <div id="main">
+                    <!-- TODO: Вырезать и вставить в homepage.html, подключать по ajax -->
+                    <div class="wrapper">
+                        <ul id="song-list">
+                            <li>
+                                <div class="container-song">
+                                    <p>Песня 1</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="container-song">
+                                    <p>Песня 2</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="container-song">
+                                    <p>Песня 3</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>                
+            </main>
+
+            <footer>
+                <div class="container-row">
+                    <nav id="social-networks">
+                        <ul>
+                            <li><a href="http://vk.com">
+                                <img src="img/vk.ico" width="30" alt="vk"></a></li>
+                            <li><a href="http://facebook.com">
+                                <img src="img/fb.png" width="30" alt="fb"></a></li>
+                            <li><a href="http://twitter.com">
+                                <img src="img/tw.png" width="30" alt="tw"></a></li>
+                            <li><a href="http://instagram.com">
+                                <img src="img/inst.png" width="30" alt="inst"></a></li>
+                        </ul>
+                    </nav>
+                    <p id="copyright-txt">
+                        Тексты песен и их переводы защищены авторским правом.
+                    </p>
+                </div>
+            </footer>
+        </div>
+    
+        <!-- <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+        <script>
+            jQuery.ajax({
+            url: "source/homepage.html",
+            dataType: "html",
+            success: function(response) {
+            document.getElementById('main').innerHTML = response;
+            }
+            });
+        </script> -->
+    </body>
+</html>
