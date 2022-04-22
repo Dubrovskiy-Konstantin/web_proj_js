@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>My Project</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/login.css">        
+        <link rel="stylesheet" href="css/profile.css">        
+        <link rel="stylesheet" href="css/lyrics.css">
+    </head>
+
+    <body>
+        
+        <div class="wrapper">
+            <header>
+                <div class="container-row">
+                    <nav id="menu">
+                        <ul>
+                            <li><a href="#main" onclick="changeOn('main-page')">Главная</a></li>
+                            <li><a href="#about" onclick="changeOn('about-page')">О нас</a></li>
+                            <li><a href="#contacts" onclick="changeOn('contacts-page')">Контакты</a></li>
+                        </ul>               
+                    </nav>
+
+                    <nav id="profile">
+                        <ul>
+                            <li>
+                                <div class="profileclick">
+                                    <button onclick="changeOn('profile-page')">
+                                        <img id="avatar" src="img/avatar.png" width="30" alt="User"/>
+                                    </button>
+                                    <p id="username">Имя пользователя</p>
+                                </div>                                
+                            </li>
+                            <li><a href="#profile" onclick="changeOn('login-page')">Профиль</a></li>
+                        </ul>               
+                    </nav>                    
+                </div>                          
+            </header>
+
+            <main>
+                <section id="main-page" onfocus="console.log('main-focus')" class="visible">
+                    
+                    <h1> Тексты песен сайт плюс социальный рейтинг</h1>
+                    <div class="wrapper">
+                        <ul id="song-list">
+                            <!-- Буду генерить в js по шаблону этого первого элемента-->
+                            <li>
+                                <a href="#lyrics">
+                                    <div class="container-song container-row" onclick="changeOn('lyrics-page')">
+                                        <img class="song-image" src="./img/song-default.ico" alt="song-image">
+                                        <div class="wrapperr">                                            
+                                            <div class="container-row desctop">
+                                                <div class="container-row mobile">
+                                                    <p class="song-name">Песня 1</p>
+                                                </div>
+                                                <div class="container-row mobile">
+                                                    <p class="song-artist">Исполнитель 1</p>
+                                                </div>
+                                            </div>
+                                            <div class="container-row">
+                                                <p class="song-lyrics">Типо текст</p>
+                                            </div>
+                                        </div>                             
+                                    </div>
+                                </a>                 
+                            </li>
+                            <!-- 
+                            <li>...</li>
+                            ...
+                            <li>...</li> -->
+                        </ul>
+                    </div>
+
+                </section> 
+                
+                <section id="about-page" class="invisible">
+                    <div class="wrapper" style="align-items: center;">
+                        <h1 style="margin-top: 50px; color: red; font-family: 'Bradley Hand', cursive;">
+                            Сайт создан в качестве проекта по лабораторным</h1> 
+                        <h2 style="margin-top: 35px; color: #999; font-family: 'Bradley Hand', cursive;">
+                            Хорошо, что он никогда не выйдет в продакшн..</h2>
+                        <img src="./img/about.gif" alt="sad" width="500" style="margin-top: 15px; border-radius: 5%;">
+                    </div>
+                </section>
+
+                <section id="contacts-page" class="invisible">
+                    <style>
+                        #contacts-page p,
+                        #contacts-page li {
+                            color: #777;
+                            font-size: larger; 
+                            font-family: 'Bradley Hand', cursive;
+                        }
+                    </style>
+                    <div class="wrapper" style="align-items: center;">
+                        <p style="margin-top: 50px; margin-bottom: 25px;">
+                            Связаться с нами можно следующими способами:</p>
+                        <ol style="margin-left: 15px; min-width: 400px;">
+                            <li>Лучше не надо</li>
+                            <li>Никак</li>
+                            <li>Никак</li>
+                            <li>см. п. 1</li>
+                            <li>Ну и еще можно: Никак</li>
+                        </ol>
+                    </div>
+                </section>
+
+                <section id="profile-page" class="invisible">
+                    <div class="wrapper">
+                        <div class="container-row">
+                            <div class="wrapper">
+                                <img src="img/avatar.png" alt="avatar" width="400"> 
+                                <form id="update-avatar" action="" >
+                                    <p>Можете загрузить новую аву</p>
+                                    <button id="upload-avatar">Загрузить</button>
+                                </form>  
+                            </div>
+                            <div class="wrapper">
+                                <p>Красавец на картинке это</p>
+                                <h1>Имя пользователя</h1>
+                                <form id="upload-song" action="">
+                                    <p>Не хотите добавить песню для нашей коллекции?
+                                        <br>Тогда ее смогут увидеть другие пользователи на главной странице</p>
+                                    <div class="container-row"><input id="input-song-name" type="text" maxlength="30"><label for="input-song-name">Название</label></div>
+                                    <div class="container-row"><input id="input-song-artist" type="text" maxlength="30"><label for="input-song-artist">Исполнитель</label></div>
+                                    <textarea name="input-lyrics" id="input-lyrics" wrap="off" cols="30" rows="10"></textarea> 
+                                    <script>
+                                        var textarea = document.querySelector('textarea#input-lyrics');
+                                        textarea.addEventListener('keyup', function(){
+                                        if(this.scrollTop > 0){
+                                            this.style.height = this.scrollHeight + "px";
+                                        }
+                                        });
+                                    </script>
+                                    <button id="send-song">Отправить</button>                                
+                                </form>
+                            </div>
+                        </div>                                   
+                        <p class="disclaimer">Никому не сообщайте пароли для ваших аккаутнов!</p>
+                    </div>
+                </section>
+
+                <section id="lyrics-page" class="invisible">                    
+                    <div class="wrapper">
+                        <div class="container-row song-header">
+                            <img class="lyrics-song-image" src="./img/song-default.ico" alt="song-image" width="50">
+                            <h1 class="lyrics-song-name">Song name</h1>
+                            <h2 class="lyrics-song-artist">Song artist</h2>
+                            
+                        </div>
+                    </div>
+                    <div class="wrapper">
+                        <div id="lyrics-area" class="container-row">
+                                <textarea name="lyrics-song" id="lyrics-song" rows="auto" cols="auto" wrap="soft" readonly></textarea>
+                                <aside>
+                                    <h2 class="lyrics-song-fragment">Lyrics Fragment</h2>
+                                    <textarea name="lyrics-aside" id="lyrics-aside" rows="auto" cols="auto" wrap="soft"></textarea>
+                                </aside>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="login-page" class="invisible">
+                    <div class="wrapper">
+                        <h1>
+                            Sign In / Sign Up
+                        </h1>
+                        <form method="post">
+                            <div class="container-row">
+                                <div class="radio"><input id="sign-in" type="radio" name="sign-in-up" value="signIn" checked><label for="sign-in">Sign In</label></div>
+                                <div class="radio"><input id="sign-up" type="radio" name="sign-in-up" value="signUp"><label for="sign-up">Sign Up</label></div>
+                            </div>
+                            <div class="container-row">
+                                <input type="text" maxlength="30" id="inputLogin" placeholder="Login">
+                            </div>
+                            <div class="container-row">
+                                <input type="text" maxlength="30" id="inputPassword" placeholder="Password">
+                            </div>  
+                            <button id="submitButton" type="submit">Enter</button>                      
+                        </form>
+                    </div>
+                </section>
+
+            </main>
+            
+            <footer>
+                <div class="container-row">
+                    <nav id="social-networks">
+                        <ul>
+                            <li><a href="http://vk.com">
+                                <img src="img/vk.ico" width="30" alt="vk"></a></li>
+                            <li><a href="http://facebook.com">
+                                <img src="img/fb.png" width="30" alt="fb"></a></li>
+                            <li><a href="http://twitter.com">
+                                <img src="img/tw.png" width="30" alt="tw"></a></li>
+                            <li><a href="http://instagram.com">
+                                <img src="img/inst.png" width="30" alt="inst"></a></li>
+                        </ul>
+                    </nav>
+                    <p id="copyright-txt">
+                        Тексты песен и их переводы защищены авторским правом.
+                    </p>
+                </div>
+            </footer>
+        </div>
+
+        <script>
+            const devices = new RegExp('Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini', "i"); 
+            if (devices.test(navigator.userAgent))
+            {
+                alert("Версия для мобильного устройства");
+                var classesToDelete = document.getElementsByClassName('desctop');
+                for (var item of classesToDelete) {
+                    item.removeAttribute('class');
+                }
+
+                var head  = document.getElementsByTagName('head')[0];
+                var link  = document.createElement('link');
+                link.rel  = 'stylesheet';
+                link.type = 'text/css';
+                link.href = './css/mobile.css';
+                head.appendChild(link);
+                
+            }
+            else
+            {
+                alert("Версия для ПК");
+                var classesToDelete = document.getElementsByClassName('mobile');
+                for (var item of classesToDelete) {
+                    item.removeAttribute('class');
+                }
+            }
+       </script>
+        <script src="./js/page_changer.js"></script>
+        <script src="./js/song_list_handler.js"></script>        
+        <script src="./js/song_lyrics.js"></script>
+    </body>
+</html>

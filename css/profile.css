@@ -1,0 +1,114 @@
+#profile-page > .wrapper  {    
+    border: 2px solid #999;
+    border-radius: 20px;
+    margin: 25px 50px !important;
+    padding: 25px 50px !important;
+    height: fit-content;
+}
+
+#profile-page .wrapper {
+    align-items: left;
+    margin-right: 10px;
+    margin-left: 10px;    
+    font-family: 'Luminari', cursive;
+    height: fit-content;
+}
+
+#profile-page .container-row .wrapper {
+    min-height: 350px;
+}
+
+
+#profile-page img {
+    border-radius: 50%;
+    width: 400px;
+    min-width: 400px;
+    min-height: 400px;
+}
+
+#profile-page form#upload-song {
+    height: fit-content;
+    margin-top: 25px;
+}
+
+#profile-page form#upload-song .container-row {
+    height: fit-content;
+}
+
+#profile-page form#upload-song input,
+#profile-page form#upload-song label,
+#profile-page form#upload-song textarea {
+    font-size: large;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+
+#profile-page form#upload-song input {    
+    width: 32ch;
+    font-family: 'Luminari', cursive;
+}
+
+#profile-page form#upload-song textarea {
+    border: 1px solid;
+    width: 500px;
+    min-width: 400px;
+    max-width: 730px;
+    min-height: 150px;
+    height: 200px;
+}
+
+#profile-page form#upload-song button#send-song,
+#profile-page #update-avatar button#upload-avatar {
+    padding: 2px;    
+    font-family: 'Luminari', cursive;
+    font-size: large;
+}
+
+#profile-page #update-avatar {
+    display: flex;
+    flex-direction: row;
+    padding-left: 15px;
+    font-size: larger;
+    color: #999;
+}
+
+#profile-page #update-avatar button#upload-avatar {
+    margin-left: 20px;
+}
+
+#profile-page p.disclaimer {
+    text-align: center;
+}
+
+@media screen and (max-width: 1300px) {
+    #profile-page form#upload-song textarea {
+        width: 100%;
+        min-width: 80%;
+        max-width: 500px;
+    }
+    #profile-page img {
+        width: 80%;
+        height: 80%;
+        min-width: 40%;
+        min-height: 40%;
+        max-width: 400px;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    #profile-page .container-row:first-child {
+        flex-direction: column;
+    }
+    #profile-page form#upload-song textarea {
+        width: 100%;
+        min-width: 80%;
+        max-width: 100%;
+    }
+    #profile-page img {
+        width: 80%;
+        height: 80%;
+        min-width: 40%;
+        min-height: 40%;
+        max-width: 400px;
+    }
+}
