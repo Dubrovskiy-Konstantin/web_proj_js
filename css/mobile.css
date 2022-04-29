@@ -42,9 +42,9 @@ footer {
     margin-bottom: 20px;
     flex-direction: column;
 }
-#profile-page #update-avatar #upload-avatar {
+#profile-page #update-avatar button#upload-avatar {
     width: fit-content;
-    margin-left: 0px !important;
+    margin-left: 0px;
 }
 #profile-page #upload-song input {
     margin: 5px 0px;
@@ -55,8 +55,7 @@ footer {
 #profile-page button,
 #profile-page input,
 #profile-page label,
-#profile-page textarea {
-    
+#profile-page textarea {    
     font-size: 32px !important;
 }
 
@@ -76,32 +75,27 @@ footer {
 }
 
 #login-page h1 {
-    font-size: 56px !important;
+    font-size: 56px;
 }
-#login-page form input,
-#login-page form button {
-    font-size: 42px !important;
+#login-page .auth-input {
+    font-size: 42px;
 }
 #login-page form label {
     font-size: 48px;
 }
-#login-page input#sign-in,
-#login-page input#sign-up {
+#login-page .sign-in-up {
     width: 30px;
     height: 30px;
     border: 3px solid #999;
 }
-#login-page input#sign-in:checked,
-#login-page input#sign-up:checked {
+#login-page .sign-in-up:checked {
     border: 9px solid brown;
 }
 
 
 #lyrics-page .song-header .lyrics-song-image {
-    width: 160px;
-    height: 160px;
-    max-width: 160px;
-    max-height: 160px;
+    min-width: 160px;
+    min-height: 160px;
     margin-right: 50px;
 }
 #lyrics-page aside {

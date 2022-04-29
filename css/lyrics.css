@@ -1,8 +1,14 @@
+#lyrics-page .lyrics-song-image {
+    margin-right: 10px;
+    max-width: 50px;
+    max-height: 50px;
+}
+
 #lyrics-page > .wrapper {    
     border: 2px solid #999;
     border-radius: 20px;
-    margin: 25px 50px !important;
-    padding: 25px 50px !important;
+    margin: 25px 50px;
+    padding: 25px 50px;
     height: fit-content;    
     
     font-family: 'Luminari', cursive;
@@ -10,13 +16,9 @@
     justify-content: right;
 }
 
-#lyrics-page .lyrics-song-image {
-    margin-right: 10px;
-    max-width: 50px;
-    max-height: 50px;
-}
-#lyrics-page .lyrics-song-name,
-#lyrics-page .lyrics-song-artist {
+
+#lyrics-page .song-header .lyrics-song-name,
+#lyrics-page .song-header .lyrics-song-artist {
     margin: 0px 10px;
 }
 
@@ -58,6 +60,10 @@
     height: fit-content;
     width: fit-content;
     padding: 30px 15px;
+}
+
+#lyrics-page aside {
+    margin-left: 15px;
 }
 
 #lyrics-page #lyrics-aside {

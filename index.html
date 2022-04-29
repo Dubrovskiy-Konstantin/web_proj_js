@@ -5,7 +5,9 @@
         <title>My Project</title>
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="css/login.css">        
+        <link rel="stylesheet" href="css/login.css"> 
+        <link rel="stylesheet" href="css/contacts.css"> 
+        <link rel="stylesheet" href="css/about.css"> 
         <link rel="stylesheet" href="css/profile.css">        
         <link rel="stylesheet" href="css/lyrics.css">
     </head>
@@ -17,9 +19,9 @@
                 <div class="container-row">
                     <nav id="menu">
                         <ul>
-                            <li><a href="#main" onclick="changeOn('main-page')">Главная</a></li>
-                            <li><a href="#about" onclick="changeOn('about-page')">О нас</a></li>
-                            <li><a href="#contacts" onclick="changeOn('contacts-page')">Контакты</a></li>
+                            <li><a href="#main">Главная</a></li>
+                            <li><a href="#about">О нас</a></li>
+                            <li><a href="#contacts">Контакты</a></li>
                         </ul>               
                     </nav>
 
@@ -27,13 +29,13 @@
                         <ul>
                             <li>
                                 <div class="profileclick">
-                                    <button onclick="changeOn('profile-page')">
+                                    <a href="#profile">
                                         <img id="avatar" src="img/avatar.png" width="30" alt="User"/>
-                                    </button>
+                                    </a>
                                     <p id="username">Имя пользователя</p>
                                 </div>                                
                             </li>
-                            <li><a href="#profile" onclick="changeOn('login-page')">Профиль</a></li>
+                            <li><a href="#login">Профиль</a></li>
                         </ul>               
                     </nav>                    
                 </div>                          
@@ -48,7 +50,7 @@
                             <!-- Буду генерить в js по шаблону этого первого элемента-->
                             <li>
                                 <a href="#lyrics">
-                                    <div class="container-song container-row" onclick="changeOn('lyrics-page')">
+                                    <div class="container-song container-row">
                                         <img class="song-image" src="./img/song-default.ico" alt="song-image">
                                         <div class="wrapperr">                                            
                                             <div class="container-row desctop">
@@ -76,28 +78,20 @@
                 </section> 
                 
                 <section id="about-page" class="invisible">
-                    <div class="wrapper" style="align-items: center;">
-                        <h1 style="margin-top: 50px; color: red; font-family: 'Bradley Hand', cursive;">
+                    <div class="wrapper">
+                        <h1>
                             Сайт создан в качестве проекта по лабораторным</h1> 
-                        <h2 style="margin-top: 35px; color: #999; font-family: 'Bradley Hand', cursive;">
+                        <h2>
                             Хорошо, что он никогда не выйдет в продакшн..</h2>
-                        <img src="./img/about.gif" alt="sad" width="500" style="margin-top: 15px; border-radius: 5%;">
+                        <img src="./img/about.gif" alt="sad" width="500">
                     </div>
                 </section>
 
                 <section id="contacts-page" class="invisible">
-                    <style>
-                        #contacts-page p,
-                        #contacts-page li {
-                            color: #777;
-                            font-size: larger; 
-                            font-family: 'Bradley Hand', cursive;
-                        }
-                    </style>
-                    <div class="wrapper" style="align-items: center;">
-                        <p style="margin-top: 50px; margin-bottom: 25px;">
+                    <div class="wrapper">
+                        <p>
                             Связаться с нами можно следующими способами:</p>
-                        <ol style="margin-left: 15px; min-width: 400px;">
+                        <ol>
                             <li>Лучше не надо</li>
                             <li>Никак</li>
                             <li>Никак</li>
@@ -123,9 +117,9 @@
                                 <form id="upload-song" action="">
                                     <p>Не хотите добавить песню для нашей коллекции?
                                         <br>Тогда ее смогут увидеть другие пользователи на главной странице</p>
-                                    <div class="container-row"><input id="input-song-name" type="text" maxlength="30"><label for="input-song-name">Название</label></div>
-                                    <div class="container-row"><input id="input-song-artist" type="text" maxlength="30"><label for="input-song-artist">Исполнитель</label></div>
-                                    <textarea name="input-lyrics" id="input-lyrics" wrap="off" cols="30" rows="10"></textarea> 
+                                    <div class="container-row"><input id="input-song-name" class="input-song" type="text" maxlength="30"><label for="input-song-name" class="input-song">Название</label></div>
+                                    <div class="container-row"><input id="input-song-artist" class="input-song" type="text" maxlength="30"><label for="input-song-artist" class="input-song">Исполнитель</label></div>
+                                    <textarea name="input-lyrics" id="input-lyrics" class="input-lyrics input-song" class="" wrap="off" cols="30" rows="10"></textarea> 
                                     <script>
                                         var textarea = document.querySelector('textarea#input-lyrics');
                                         textarea.addEventListener('keyup', function(){
@@ -169,16 +163,16 @@
                         </h1>
                         <form method="post">
                             <div class="container-row">
-                                <div class="radio"><input id="sign-in" type="radio" name="sign-in-up" value="signIn" checked><label for="sign-in">Sign In</label></div>
-                                <div class="radio"><input id="sign-up" type="radio" name="sign-in-up" value="signUp"><label for="sign-up">Sign Up</label></div>
+                                <div class="radio"><input id="sign-in" type="radio" class="sign-in-up" name="sign-in-up" value="signIn" checked><label for="sign-in">Sign In</label></div>
+                                <div class="radio"><input id="sign-up" type="radio" class="sign-in-up" name="sign-in-up" value="signUp"><label for="sign-up">Sign Up</label></div>
                             </div>
                             <div class="container-row">
-                                <input type="text" maxlength="30" id="inputLogin" placeholder="Login">
+                                <input type="text" maxlength="30" class="auth-input" id="inputLogin" placeholder="Login">
                             </div>
                             <div class="container-row">
-                                <input type="text" maxlength="30" id="inputPassword" placeholder="Password">
+                                <input type="text" maxlength="30" class="auth-input" id="inputPassword" placeholder="Password">
                             </div>  
-                            <button id="submitButton" type="submit">Enter</button>                      
+                            <button id="submitButton" class="submitButton auth-input" type="submit">Enter</button>                      
                         </form>
                     </div>
                 </section>
@@ -235,6 +229,7 @@
        </script>
         <script src="./js/page_changer.js"></script>
         <script src="./js/song_list_handler.js"></script>        
+        <script src="./js/reader.js"></script>        
         <script src="./js/song_lyrics.js"></script>
     </body>
 </html>
