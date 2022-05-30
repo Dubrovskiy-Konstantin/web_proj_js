@@ -30,7 +30,9 @@
 }
 
 #main-page .container-song .song-image {
-    width: 90px;
+    width: 95px;
+    border-radius: 10pt;
+    object-fit: cover;
 }
 
 #main-page .container-song .wrapper {

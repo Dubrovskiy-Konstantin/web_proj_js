@@ -4,6 +4,7 @@
 ___
 
 An application to store and discuss song lyrics.
+Deployed on https://rocky-coast-08048.herokuapp.com/
 
 __Basic functions:__
 * Music tracks (CRUD)
@@ -11,14 +12,13 @@ __Basic functions:__
   + album
   + author
 * Lyrics (CRUD)
-  + each song can have one or more lyrics
-  + author
-  + language (original or translation)
-  + user can select (with mouse or touch) a part of the text and add an
-annotation to it
-  + text parts with annotations should be highlighted in text, annotations are
-displayed near the text
-  + other users can rate lyrics and comments (upvote / downvote)
+  + author/image
+  + user can add song to the DB
+  + user can select (with mouse or touch) a part of the text and add an annotation to it
+  + text parts with annotations should be highlighted in text, annotations are displayed near the text
+* Users
+  + authorization (login/register)
+  + user can add songs/coments only after login
 
 __Examples__: _[Genius](https://genius.com/)_
 
