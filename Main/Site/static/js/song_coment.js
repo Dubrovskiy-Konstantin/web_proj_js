@@ -1,15 +1,15 @@
-var textarea = document.querySelector('#lyrics-page #lyrics-song');
+let textarea = document.querySelector('#lyrics-page #lyrics-song');
 textarea.addEventListener('select', function(){
-    var content = window.getComputedStyle(document.querySelector('#lyrics-page #lyrics-song'),'::selection').userSelect;
+    let content = window.getComputedStyle(document.querySelector('#lyrics-page #lyrics-song'),'::selection').userSelect;
     console.log(content);
 });
 
 function getHighlight() {
  
-    var selection = window.getSelection(); // 1.
+    let selection = window.getSelection(); // 1.
     
  
-    var object = {
+    let object = {
         parent : null,
         text   : '',
         rect   : null
@@ -26,7 +26,7 @@ function getHighlight() {
     return object; // 2.
 }
 
-var sharing = document.querySelector( '.sharing' );
+let sharing = document.querySelector( '.sharing' );
 document.querySelector('#lyrics-page').addEventListener( 'mouseup', function() {
     setTimeout( showMenu, 100 );
 } );
@@ -34,7 +34,7 @@ document.querySelector('#lyrics-page').addEventListener( 'mouseup', function() {
 function showMenu() {
  
     // 1.
-    var highlight = getHighlight();
+    let highlight = getHighlight();
  
     // 2.
     if ( highlight.text === '' ) {
@@ -55,7 +55,7 @@ function showMenu() {
     }
  
     // 4.
-    var width = ( highlight.rect.width / 2 ) - 42;
+    let width = ( highlight.rect.width / 2 ) - 42;
     /**
      * The "42" is acquired from our sharing buttons width devided by 2.
      */
@@ -72,7 +72,7 @@ function showMenu() {
 // OnClick.
 document.getElementById( 'share' ).addEventListener( 'click', function() {
  
-    var highlight = getHighlight();
+    let highlight = getHighlight();
  
     if ( highlight.text !== '') {
         document.querySelector('.lyrics-song-fragment').textContent = highlight.text;

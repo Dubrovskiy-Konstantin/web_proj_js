@@ -26,7 +26,7 @@ class JournalNode {
  */
 function getSongs() {
     let songs = new Set();
-    var catalog = JSON.parse(reader.readTextFile(sourcePath + 'songDB/catalog.json')).Nodes;
+    let catalog = JSON.parse(reader.readTextFile(sourcePath + 'songDB/catalog.json')).Nodes;
     catalog.forEach(node => {
         songs.add(JSON.parse(reader.readTextFile(sourcePath + node.songPath)).SongItem);
     });
@@ -151,16 +151,16 @@ function loadSongs() {
             let artist = this.querySelector('.song-artist').textContent;
             let img = this.querySelector('.song-image').src;
             
-            var textarea = document.querySelector('#lyrics-page #lyrics-song');
+            let textarea = document.querySelector('#lyrics-page #lyrics-song');
 
             textarea.innerHTML = getLyricsWithComments(name, artist);
             textarea.style.height = "fit-content";
             
-            var textname = document.querySelector('#lyrics-page .lyrics-song-name');
-            var textartist = document.querySelector('#lyrics-page .lyrics-song-artist');
-            var lyricsimg = document.querySelector('#lyrics-page .lyrics-song-image');
-            var textcomment = document.querySelector('#lyrics-page .lyrics-song-fragment');
-            var textaside = document.querySelector('#lyrics-page #lyrics-aside');
+            let textname = document.querySelector('#lyrics-page .lyrics-song-name');
+            let textartist = document.querySelector('#lyrics-page .lyrics-song-artist');
+            let lyricsimg = document.querySelector('#lyrics-page .lyrics-song-image');
+            let textcomment = document.querySelector('#lyrics-page .lyrics-song-fragment');
+            let textaside = document.querySelector('#lyrics-page #lyrics-aside');
 
             textname.textContent = name;
             textartist.textContent = artist;
@@ -193,8 +193,8 @@ function commentClick(elem){
  * Builds Json object of coment and calls upload function
  */
 function setComment(){
-    var name = document.querySelector('#lyrics-page .lyrics-song-name').textContent;
-    var artist = document.querySelector('#lyrics-page .lyrics-song-artist').textContent;
+    let name = document.querySelector('#lyrics-page .lyrics-song-name').textContent;
+    let artist = document.querySelector('#lyrics-page .lyrics-song-artist').textContent;
 
     let fragment = document.querySelector(".lyrics-song-fragment").textContent;
     let text = getLyrics(name, artist);

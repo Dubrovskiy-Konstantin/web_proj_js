@@ -122,8 +122,8 @@
                                     <div class="container-row"><input id="input-song-artist" name="input-song-artist" class="input-song" type="text" maxlength="30"><label for="input-song-artist" class="input-song">Исполнитель</label></div>
                                     <textarea id="input-lyrics" name="input-lyrics" class="input-lyrics input-song" class="" wrap="off" cols="30" rows="10"></textarea> 
                                     <script>
-                                        var textarea = document.querySelector('textarea#input-lyrics');
-                                        textarea.addEventListener('keyup', function(){
+                                        let textarea_profile = document.querySelector('textarea#input-lyrics');
+                                        textarea_profile.addEventListener('keyup', function(){
                                         if(this.scrollTop > 0){
                                             this.style.height = this.scrollHeight + "px";
                                         }
@@ -163,8 +163,8 @@
                                         <h2 class="lyrics-song-fragment">Lyrics Fragment</h2>
                                         <textarea name="lyrics-aside" id="lyrics-aside" rows="auto" cols="auto" wrap="soft"></textarea>
                                         <script>
-                                            var textarea = document.querySelector('textarea#lyrics-aside');
-                                            textarea.addEventListener('keyup', function(){
+                                            let textarea_lyrics = document.querySelector('textarea#lyrics-aside');
+                                            textarea_lyrics.addEventListener('keyup', function(){
                                             if(this.scrollTop > 0){
                                                 this.style.height = this.scrollHeight + "px";
                                             }
@@ -227,8 +227,8 @@
         <script> const sourcePath = document.getElementById("djangoSourcePath").href; console.log(sourcePath)</script>
         <!-- Авторизация пользователя -->
         <script>
-            var json_user = sessionStorage.getItem('user');
-            var currentUser = json_user ? JSON.parse(json_user) : null;    
+            let json_user = sessionStorage.getItem('user');
+            let currentUser = json_user ? JSON.parse(json_user) : null;    
             if(currentUser){
                 console.log(currentUser?.login);
                 document.querySelector("#profile-page .username").textContent = currentUser.login;
